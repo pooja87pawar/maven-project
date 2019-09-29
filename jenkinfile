@@ -1,25 +1,13 @@
-pipeline
-{
-
-     agent any
-	 
-	 stages{
-	   stage('Build'){
-	   			steps{
-	  				 git 'https://github.com/pooja87pawar/maven-project.git'
-				   }
-			   }
 
 
-stage ('test') {
-		steps{
-				withMaven(jdk: '', maven: 'mymaven')
-			{
-				sh 'mvn test'
-			}
-			}
+stage('deploy to tomcat'){
+	
 
+steps {
+	
+	sshagent (credentials: ['35.159.21.2']) 
+	{
+		sh 'scp -o StrictHostKeyChecking=no **/*.war ec2-user 35.159.21.2: /var/lib/tomcat/webapps'
+	}
 		}
-}
-}
-
+					}
