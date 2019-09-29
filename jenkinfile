@@ -5,7 +5,7 @@ pipeline{
 	 stages{
 	   stage('Build'){
 	   steps{
-	   git 'https://github.com/pooja87pawar/jenkins_pipeline_hello.git'
+	   git 'https://github.com/pooja87pawar/maven-project.git'
 	   }
 	   }
 
