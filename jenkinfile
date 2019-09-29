@@ -1,25 +1,25 @@
-pipeline{
+pipeline
+{
 
-     agent any{
+     agent any
 	 
 	 stages{
 	   stage('Build'){
-	   steps{
-	   git 'https://github.com/pooja87pawar/maven-project.git'
-	   }
-	   }
+	   			steps{
+	  				 git 'https://github.com/pooja87pawar/maven-project.git'
+				   }
+			   }
 
 
-stage ('test'){
-steps{
-withMaven(jdk: '', maven: 'mymaven')
-{
-sh 'mvn test'
-}
-}
+stage ('test') {
+		steps{
+				withMaven(jdk: '', maven: 'mymaven')
+			{
+				sh 'mvn test'
+			}
+			}
 
-}
-}
+		}
 }
 }
 
