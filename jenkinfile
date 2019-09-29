@@ -1,3 +1,29 @@
+pipeline{
+
+     agent any
+	 
+	 stages {
+	        stage('Build')
+			{
+	          steps{
+	                 git https://github.com/pooja87pawar/jenkins_pipeline_hello.git
+	               }
+	        }
+
+
+      stage ('test')
+	        {
+             steps{
+                    withMaven(jdk: '', maven: 'mymaven')
+					{
+		    
+                    sh 'mvn test'
+                    }
+            }
+
+        }
+}
+}
 
 
 stage('deploy to tomcat'){
