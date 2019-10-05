@@ -1,0 +1,21 @@
+pipeline
+{
+       agent any
+       stages
+             {
+               stage('SCM Checkout')
+                                      {
+                                       git 'https://github.com/pooja87pawar/maven-project/'
+                                      }
+            }
+
+      stage ('compile stage')
+                          steps
+                           {
+                               withMaven(maven: 'mymaven') 
+                               {
+                                sh 'mvn install'
+                                }
+                            }
+                            
+   }
