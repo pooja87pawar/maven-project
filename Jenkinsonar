@@ -23,10 +23,12 @@ pipeline
                        stage('sonar')
                               {
                                steps{
-                                  withMaven(maven: 'mymaven') {
-                                      sh 'clean install sonar:sonar'
-                                                 }
-                                      
+                               
+                               withSonarQubeEnv('sonarnew') {
+                                sh 'clean install sonar:sonar'
+  
+                                                            }
+                               
                                       }
                                   }
 
