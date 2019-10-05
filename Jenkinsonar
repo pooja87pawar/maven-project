@@ -8,16 +8,16 @@ pipeline
                                            }
                                       }
                                       
-                                      stage('maven:mymaven ')
-                                      {
-                                      steps{
-                                      withMaven(maven: 'mymaven') {
-                                      sh 'mvn clean install maven '
-                                          
-                                          }
+                                      
+                      stage('maven')
+                              {
+                               steps{
+                                  withMaven(maven: 'mymaven') {
+                                      sh 'mvn clean install maven'
+                                                 }
                                       
                                       }
-                                      }
+                                  }
                                       
                       
                      }
