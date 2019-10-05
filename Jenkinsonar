@@ -7,8 +7,21 @@ pipeline
                                        git 'https://github.com/pooja87pawar/maven-project.git'
                                            }
                                       }
+                                      
+                                      stage('maven:mymaven ')
+                                      {
+                                      steps{
+                                      withMaven(maven: 'mymaven') {
+                                      sh 'mvn clean install maven '
+                                          
+                                          }
+                                      
+                                      }
+                                      }
+                                      
                       
                      }
+                     
             }
 
 
