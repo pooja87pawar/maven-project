@@ -4,10 +4,12 @@ pipeline
        stages
            steps  {
                stage('SCM Checkout')
-                                      {
+                                     steps {
                                        git 'https://github.com/pooja87pawar/maven-project/'
                                       }
+                      
+                     }
             }
-            }
+
 
       
