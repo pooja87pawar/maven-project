@@ -24,7 +24,7 @@ pipeline
                               {
                                steps{
                                
-                               withSonarQubeEnv('sonarnew') {
+                               withSonarQubeEnv('sonar') {
                                
                                           
                                           withMaven(maven: 'mymaven')
